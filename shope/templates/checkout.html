@@ -1,0 +1,31 @@
+{% extends 'bace.html' %}
+
+{% block content %}
+<div class="checkout-wrapper">
+    <div class="checkout-container">
+        <h2 class="checkout-title">Delivery Details</h2>
+        
+        <form method="post" class="checkout-form">
+            {% csrf_token %}
+            
+            <div class="form-fields">
+                {% for field in form %}
+                    <div class="checkout-group" style="margin-bottom: 25px;">
+                <label>{{ field.label }}</label>
+                {{ field }}
+                        {% if field.errors %}
+                            <span class="error-text">{{ field.errors }}</span>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="order-summary-box">
+                <h3>Order Summary</h3>
+                <p>By placing your order, you agree to VisionPoint's privacy notice and conditions of use.</p>
+            <button type="submit" class="place-order-btn">Place Your Order</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

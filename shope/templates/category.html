@@ -1,0 +1,57 @@
+{% extends 'bace.html' %}
+{% load static %}
+
+{% block content %}
+
+<h2 class="category-title">
+    {{ category_name }}
+</h2>
+
+<div class="product-grid">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        <a href="{% url 'product_detail' product.id %}"
+           style="text-decoration:none; color:inherit;">
+
+            <h3>{{ product.title }}</h3>
+
+              {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.title }}">
+        {% elif product.image_url %}
+            <img src="{{ product.image_url }}" alt="{{ product.title }}">
+        {% endif %}
+
+            {% if product.discount_price %}
+
+                <h4>₹{{ product.discount_price }}</h4>
+
+                <del>₹{{ product.price }}</del>
+
+            {% else %}
+
+                <h4>₹{{ product.price }}</h4>
+
+            {% endif %}
+
+        </a>
+
+        <a href="{% url 'add_to_cart' product.id %}">
+            <button class="add-to-cart-btn">
+                Add to Cart
+            </button>
+        </a>
+
+    </div>
+
+    {% empty %}
+
+    <h3>No products found</h3>
+
+    {% endfor %}
+
+</div>
+
+{% endblock content %}

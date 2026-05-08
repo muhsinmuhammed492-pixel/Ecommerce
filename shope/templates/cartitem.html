@@ -1,0 +1,56 @@
+ {% extends 'bace.html' %}
+
+{% block content %}
+
+    <div class="cart-main-container">
+        <h1 class="cart-title">Shopping Cart</h1>
+        <div class="cart-wrapper">
+       {% for item in cartitems %}
+<div class="cart-item-row">
+
+    <!-- Image -->
+    <div class="item-img-box">
+           {% if item.product.image %}
+
+                            <img src="{{ item.product.image.url }}"
+                                 alt="{{ item.product.title }}">
+
+                        {% elif item.product.image_url %}
+
+                            <img src="{{ item.product.image_url }}"
+                                 alt="{{ item.product.title }}">
+
+                        {% endif %}
+    </div>
+
+    <!-- Details -->
+    <div class="item-details-box">
+        <h4>{{ item.product.title }}</h4>
+        <p>Price: ₹{{ item.product.price }}</p>
+
+        <form action="{% url 'update_cart' item.id %}" method="POST" 
+              style="display: flex; align-items: center; gap: 10px;">
+            {% csrf_token %}
+            <label>Qty:</label>
+            <input type="number" name="quantity" value="{{ item.quantity }}" min="1"
+                   onchange="this.form.submit()">
+        </form>
+
+        <a href="{% url 'remove_from_cart' item.id %}" class="delete-link">Delete</a>
+    </div>
+
+</div>
+{% empty %}
+            <div class="empty-cart">
+                <h2>Ninte cart khali aanu! 🛒</h2>
+                <a href="{% url 'index' %}">Shop now</a>
+            </div>
+        {% endfor %}
+
+        <div class="checkout-area">
+            <a href="{% url 'checkout' %}">
+            <button class="buy-button">Proceed to checkout</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,1745 @@
+/* General Setup */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* Navbar Style */
+/* =========================
+   BASE NAVBAR
+========================= */
+
+.vp-navbar {
+    background: #fff;
+    padding: 12px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* MAIN LAYOUT */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #003366;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: #00d4ff;
+}
+
+/* =========================
+   ICONS
+========================= */
+
+.nav-icons{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.nav-icons i {
+    font-size: 18px;
+    color: #003366;
+    cursor: pointer;
+}
+
+/* PROFILE ICON */
+.user-avatar-nav {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .nav-icons i {
+        font-size: 16px;
+    }
+}
+
+
+.nav-search form{
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+    overflow: hidden;
+    height: 25px;   /* important: keeps it small */
+    padding: 10px;
+    width: 198px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+
+}
+
+.nav-search input{
+    border: none;
+    outline: none;
+    padding: 0 8px;
+    font-size: 13px;
+    width: 140px;   /* compact width */
+    height: 100%;
+}
+
+.nav-search button{
+    border: none;
+    background: #333;
+    color: white;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Product Card Style (Opticals) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.add-to-cart-btn {
+    display: inline-block;
+    background-color: #003366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Footer Style */
+.vp-footer {
+    background-color: #003366;
+    color: white;
+    padding: 50px 5% 20px;
+    margin-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-info p {
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.footer-links a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 13px;
+}
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f0f2f5; /* Light Grey background */
+}
+
+.auth-card {
+    background: #ffffff;
+    width: 380px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border: 1px solid #e1e4e8;
+}
+
+.auth-card h2 {
+    color: #003366;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #00d4ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0,212,255,0.3);
+}
+
+/* പ്രധാന ബട്ടൺ */
+.auth-btn {
+    background-color: #003366;
+    color: white;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #002244;
+}
+
+/* താഴെയുള്ള ലിങ്കുകൾ */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Cart Page Overall Wrapper */
+.cart-page-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-main-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.cart-title {
+    font-size: 28px;
+    color: #003366;
+    border-bottom: 2px solid #f0f2f5;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+/* Individual Item Row */
+.cart-item-row {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.cart-item-row:hover {
+    background-color: #fafafa;
+}
+
+/* Image Styling */
+.item-img-box {
+    flex: 0 0 180px; /* ഇമേജിന് കൃത്യമായ വീതി നൽകുന്നു */
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.item-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* ഇമേജ് വലിപ്പം കൂടാതെ കറക്റ്റ് ആയി ഇരിക്കാൻ */
+}
+
+/* Details Section */
+.item-details-box {
+    flex: 2;
+    padding-left: 30px;
+}
+
+.item-details-box h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.stock-text {
+    color: #2e7d32;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.delete-link {
+    color: #cc0000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* Price Box */
+.item-price-box {
+    flex: 1;
+    text-align: right;
+}
+
+.item-price-box p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #003366;
+}
+
+/* Checkout Section */
+.checkout-area {
+    margin-top: 30px;
+    text-align: right;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.buy-button {
+    background-color: #00d4ff;
+    color: #fff;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.buy-button:hover {
+    background-color: #003366;
+    box-shadow: 0 4px 12px rgba(0,212,255,0.4);
+}
+
+/* Empty Cart Styling */
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+}
+
+.empty-cart h2 {
+    color: #666;
+}
+
+.empty-cart a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+/* Checkout Page Styling */
+.checkout-wrapper {
+    background-color: #f7f8f9;
+    padding: 50px 0;
+    min-height: 90vh;
+}
+
+.checkout-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.checkout-title {
+    color: #003366;
+    font-size: 24px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 10px;
+}
+
+.checkout-group {
+    margin-bottom: 20px;
+}
+
+.checkout-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Django Form Inputs Styling */
+.checkout-group input, 
+.checkout-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.order-summary-box {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.order-summary-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.order-summary-box p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.place-order-btn {
+    width: 100%;
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.place-order-btn:hover {
+    background-color: #00d4ff;
+}
+
+/* Checkout Form Fields ശരിയാക്കാൻ */
+.checkout-group input {
+    width: 100%;
+    max-width: 400px; /* ബോക്സിന്റെ വലിപ്പം ഇവിടെ നിയന്ത്രിക്കാം */
+    padding: 10px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+
+/* അഡ്രസ്സ് ബോക്സ് (Textarea) വലിപ്പം കുറയ്ക്കാൻ */
+.checkout-group textarea {
+    width: 100%;
+    max-width: 400px;
+    height: 70px; /* ബോക്സിന്റെ ഉയരം കുറച്ചു */
+    resize: none; 
+    padding: 10px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+}
+
+/* ലേബലുകൾക്ക് ചെറിയ ഗ്യാപ്പ് നൽകാൻ */
+.checkout-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* User സെലക്ഷൻ ബോക്സ് ഒഴിവാക്കാൻ */
+/* സാധാരണ ചെക്കൗട്ട് പേജിൽ യൂസറെ സെലക്ട് ചെയ്യേണ്ട ആവശ്യമില്ല, 
+   അതുകൊണ്ട് അത് hide ചെയ്യാം (നിന്റെ views-ൽ അത് സെറ്റ് ചെയ്തിട്ടുണ്ടെങ്കിൽ മാത്രം) */
+.checkout-group select[name="user"] {
+    display: none;
+}
+
+/* Checkout Section - Compact & Elegant */
+.checkout-wrapper {
+    background-color: #f4f7f6;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 450px; /* വീതി കുറച്ച് ഒതുക്കി നിർത്തി */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.checkout-title {
+    text-align: center;
+    color: #003366;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Form Groups */
+.checkout-group {
+    margin-bottom: 18px;
+}
+
+.checkout-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+/* Input Fields - Clean look */
+.checkout-group input, 
+.checkout-group select, 
+.checkout-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #fdfdfd;
+}
+
+.checkout-group input:focus {
+    border-color: #00d4ff;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+    outline: none;
+}
+/* കാർട്ട് മെയിൻ കണ്ടെയ്നർ */
+.cart-main-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* ഓരോ ഐറ്റം റോയും */
+.cart-item-row {
+    display: flex !important;
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    border: 1px solid #eee;
+}
+
+.cart-item-row:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ഇമേജ് സെക്ഷൻ */
+.item-img-box {
+    flex-shrink: 0 ;
+    width: 100px;
+}
+
+.item-img-box img {
+    width: 100px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* ഡീറ്റെയിൽസ് സെക്ഷൻ (പേരും വിലയും) */
+.item-details-box {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.item-details-box h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.item-details-box p {
+    color: #666;
+    font-weight: bold;
+}
+
+/* ക്വാണ്ടിറ്റി സെലക്ടർ */
+.item-details-box form {
+    margin-top: 10px;
+}
+
+.item-details-box input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ഡിലീറ്റ് ബട്ടൺ */
+.delete-link {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
+}
+
+.delete-link:hover {
+    text-decoration: underline;
+}
+
+/* ചെക്കൗട്ട് ഏരിയ */
+.checkout-area {
+    text-align: right;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.buy-button {
+    background: #00b894;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.buy-button:hover {
+    background: #009473;
+    transform: translateY(-2px);
+}
+
+/* കാർട്ട് കാലിയാണെങ്കിൽ */
+.empty-cart {
+    text-align: center;
+    padding: 50px;
+}
+
+.empty-cart h2 {
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.message-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.mini-success-box {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border-left: 5px solid #28a745; /* പച്ച വര */
+    padding: 15px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    min-width: 300px;
+    animation: slideIn 0.5s ease-out;
+}
+
+.mini-success-box .icon {
+    background: #28a745;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+    margin-right: 15px;
+}
+
+.main-msg {
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.sub-msg {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.close-msg {
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* കാർഡ് സ്റ്റൈൽ */
+.product-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ഇമേജ് സെക്ഷൻ */
+.product-img-wrapper {
+    height: 200px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.product-img-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ഇൻഫോ സെക്ഷൻ */
+.product-info {
+    padding: 15px;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-category {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.add-to-cart-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.qty-selector {
+    margin-bottom: 10px;
+}
+
+.qty-input {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.add-to-cart-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+/* ഫോം മൊത്തത്തിൽ ഇരിക്കുന്ന കണ്ടെയ്നർ */
+.form-container {
+    max-width: 550px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* തലക്കെട്ട് (Add New Product) */
+.form-title {
+    text-align: center;
+    color: #2d3436;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ഓരോ ഇൻപുട്ടും ലേബലും ഗ്രൂപ്പ് ചെയ്യുന്നു */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* ലേബലുകളുടെ ഡിസൈൻ */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #636e72;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ഇൻപുട്ട് ഫീൽഡുകൾ, സെലക്ട് ബോക്സ് */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #2d3436;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* ഫയൽ ഇൻപുട്ട് മാത്രം */
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background: #f1f2f6;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ക്ലിക്ക് ചെയ്യുമ്പോൾ ബോക്സിന്റെ ബോർഡർ മാറാൻ */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0984e3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(9, 132, 227, 0.2);
+}
+
+/* ആഡ് പ്രൊഡക്റ്റ് ബട്ടൺ */
+.add-product-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.add-product-btn:hover {
+    background-color: #00a082;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+.add-product-btn:active {
+    transform: translateY(0);
+}
+
+
+
+/* form container */
+
+
+/* input fields */
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* focus effect */
+form input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 5px rgba(0,212,255,0.5);
+}
+
+/* button */
+form button {
+    width: 100%;
+    padding: 27px;
+    background: #00d4ff;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.3s;
+}
+
+/* button hover */
+form button:hover {
+    background: #00aacc;
+    transform: scale(1.03);
+}
+
+/* സെർച്ച് റിസൾട്ട് കണ്ടെയ്നർ */
+.search-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.search-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #f1f1f1;
+    padding-bottom: 10px;
+}
+
+.search-header h2 {
+    color: #2d3436;
+    font-size: 24px;
+}
+
+/* പ്രൊഡക്റ്റ് ഗ്രിഡ് */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* പ്രൊഡക്റ്റ് കാർഡ് ഡിസൈൻ */
+.search-product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.search-product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.search-product-card h4 {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.search-product-card .price {
+    font-weight: bold;
+    color: #00b894;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* ആഡ് ടു കാർട്ട് ബട്ടൺ */
+.search-add-btn {
+    display: inline-block;
+    background: #0984e3;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.search-add-btn:hover {
+    background: #074b83;
+}
+
+/* റിസൾട്ട് ഒന്നും കിട്ടിയില്ലെങ്കിൽ */
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f9f9f9;
+    border-radius: 15px;
+}
+
+
+/* Product Detail Page Styles */
+.detail-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.detail-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* ഇടത് വശത്തെ ഇമേജ് സെക്ഷൻ */
+.detail-img-section {
+    flex: 1;
+    min-width: 400px;
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.detail-img-section img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.detail-img-section img:hover {
+    transform: scale(1.1); /* സൂം ഇഫക്റ്റ് */
+}
+
+/* വലത് വശത്തെ വിവരങ്ങൾ */
+.detail-info-section {
+    flex: 1;
+    min-width: 400px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-category {
+    color: #00b894;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.detail-title {
+    font-size: 2.8rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.detail-price {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #2d3436;
+    margin-bottom: 25px;
+}
+
+.detail-desc {
+    color: #636e72;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* ബട്ടണുകൾ */
+.detail-btns {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-cart {
+    background: #2d3436;
+    color: #fff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-cart:hover {
+    background: #00b894;
+    transform: translateY(-3px);
+}
+
+.btn-back {
+    background: transparent;
+    color: #2d3436;
+    padding: 15px 40px;
+    border: 2px solid #2d3436;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #f1f2f6;
+}
+
+/* മൊബൈൽ റെസ്പോൺസീവ് ആകാൻ */
+@media (max-width: 768px) {
+    .detail-info-section {
+        padding: 30px;
+    }
+    .detail-title {
+        font-size: 2rem;
+    }
+}
+.rating {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.rating span {
+    letter-spacing: 2px;
+}
+
+/* Review Section Styles */
+.review-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.review-section h3 {
+    font-size: 1.8rem;
+    color: #2d3436;
+    margin-bottom: 25px;
+    border-left: 5px solid #00b894;
+    padding-left: 15px;
+}
+
+/* Individual Review Card */
+.review-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 4px solid #dfe6e9;
+    transition: 0.3s;
+}
+
+.review-card:hover {
+    transform: translateX(5px);
+    background: #f1f2f6;
+}
+
+.review-card strong {
+    font-size: 1.1rem;
+    color: #2d3436;
+}
+
+.review-stars {
+    color: #f1c40f; /* Gold color for stars */
+    margin-left: 10px;
+}
+
+.review-card p {
+    margin: 10px 0;
+    color: #636e72;
+    line-height: 1.5;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #b2bec3;
+}
+
+/* Review Form Styles */
+.review-form-box {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid #eee;
+}
+
+.review-form-box h4 {
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+.styled-select, .styled-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #dfe6e9;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.styled-select:focus, .styled-textarea:focus {
+    border-color: #00b894;
+    outline: none;
+}
+
+.submit-review-btn {
+    background: #2d3436;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-review-btn:hover {
+    background: #00b894;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+}
+
+/* സൈഡ് പ്രൊഫൈൽ മെയിൻ ബോക്സ് */
+.side-profile-box {
+    position: fixed;
+    right: -320px; /* ആദ്യം സൈഡിൽ ഒളിച്ചിരിക്കും */
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: #1a1a1a;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 9999;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #ffffff;
+}
+
+/* ആക്റ്റീവ് ആകുമ്പോൾ പുറത്തേക്ക് വരാൻ */
+.side-profile-box.active {
+    right: 0;
+}
+
+.side-profile-content {
+    padding: 40px 25px;
+    position: relative;
+}
+
+/* ക്ലോസ് ബട്ടൺ */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #95a5a6;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+/* ഹെഡർ ഭാഗം (പേരും ഇമെയിലും) */
+.side-profile-header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.avatar-circle {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, #00b894, #00cec9);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    font-size: 2.5rem;
+    box-shadow: 0 10px 20px rgba(0, 184, 148, 0.2);
+}
+
+.side-profile-header h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.side-profile-header p {
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
+
+/* ലിങ്കുകൾ */
+.side-profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.side-profile-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #dfe6e9;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.side-profile-links a i {
+    width: 25px;
+    font-size: 1.1rem;
+    color: #00b894;
+}
+
+.side-profile-links a:hover {
+    background: #2d3436;
+    transform: translateX(8px);
+    color: #00b894;
+}
+.close-btn {
+    color: #636e72;
+}
+
+/* ഡിവൈഡർ ലൈൻ */
+hr {
+    border-top: 1px solid #2d3436;
+}
+
+/* ലോഗൗട്ട് സ്റ്റൈൽ */
+.logout-side {
+    margin-top: 10px;
+    color: #ff7675 !important;
+}
+
+.logout-side i {
+    color: #e17055 !important;
+}
+
+.logout-side:hover {
+    background: rgba(255, 118, 117, 0.1) !important;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #f1f2f6;
+    margin: 20px 0;
+}
+
+/* =========================
+   ORDER LIST
+========================= */
+
+.orders-wrapper {
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    border-left: 5px solid #00b894;
+    padding-left: 15px;
+}
+
+/* =========================
+   ORDER CARD
+========================= */
+
+.order-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 1px solid #2d3436;
+    transition: 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    border-color: #00b894;
+    box-shadow: 0 10px 25px rgba(0, 184, 148, 0.15);
+}
+
+/* =========================
+   TOP INFO
+========================= */
+
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #2d3436;
+    padding-bottom: 10px;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #00b894;
+}
+
+.order-date {
+    color: #b2bec3;
+    font-size: 14px;
+}
+
+/* =========================
+   PRODUCT DETAILS
+========================= */
+
+.order-item-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.order-item-details img {
+    width: 110px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.item-text h4 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.item-text p {
+    margin: 4px 0;
+    color: #dfe6e9;
+}
+
+.order-price {
+    color: #00e676 !important;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.order-status {
+    margin-top: 15px;
+}
+
+.status-badge {
+    background: rgba(0, 184, 148, 0.15);
+    color: #00e676;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid rgba(0, 184, 148, 0.3);
+}
+
+/* =========================
+   EMPTY ORDERS
+========================= */
+
+.empty-orders {
+    text-align: center;
+    padding: 60px 20px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    border: 1px solid #2d3436;
+}
+
+.empty-orders i {
+    font-size: 70px;
+    color: #636e72;
+    margin-bottom: 20px;
+}
+
+.empty-orders p {
+    font-size: 18px;
+    color: #dfe6e9;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.shop-now-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00b894;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.shop-now-btn:hover {
+    background: #00a383;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .order-item-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .order-item-details img {
+        width: 100%;
+        height: 220px;
+    }
+
+    .order-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+}
+.ad-banner img{
+    width: 100%;
+    border-radius: 10px;
+     height:560px;
+}
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:white;
+    min-width:180px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    border-radius:10px;
+    overflow:hidden;
+    z-index:1000;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px;
+    text-decoration:none;
+    color:black;
+}
+
+.dropdown-content a:hover{
+    background:#f1f1f1;
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}

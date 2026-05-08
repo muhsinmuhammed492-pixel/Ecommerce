@@ -1,0 +1,104 @@
+{% extends 'bace.html' %}
+
+{% block content %}
+
+<div class="orders-wrapper">
+
+    <h2 class="page-title">
+        My Purchase History
+    </h2>
+
+    {% if orders %}
+
+        <div class="orders-list">
+
+            {% for order in orders %}
+
+                {% for item in order.cartitem_set.all %}
+
+                <div class="order-card">
+
+                    <div class="order-info">
+
+                        <span class="order-id">
+                            Order #{{ order.id }}
+                        </span>
+
+                        <span class="order-date">
+                            {{ order.created_at|date:"d M Y" }}
+                        </span>
+
+                    </div>
+
+                    <div class="order-item-details">
+
+                        {% if item.product.image %}
+
+                            <img src="{{ item.product.image.url }}"
+                                 alt="{{ item.product.title }}">
+
+                        {% elif item.product.image_url %}
+
+                            <img src="{{ item.product.image_url }}"
+                                 alt="{{ item.product.title }}">
+
+                        {% endif %}
+
+                        <div class="item-text">
+
+                            <h4>
+                                {{ item.product.title }}
+                            </h4>
+
+                            <p>
+                                Quantity: {{ item.quantity }}
+                            </p>
+
+                            <p class="order-price">
+                                ₹{{ item.product.price }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="order-status">
+
+                        <span class="status-badge">
+                            Delivered
+                        </span>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-orders">
+
+            <i class="fas fa-box-open"></i>
+
+            <p>
+                You haven't ordered anything yet.
+            </p>
+
+            <a href="{% url 'index' %}"
+               class="shop-now-btn">
+
+               Start Shopping
+
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

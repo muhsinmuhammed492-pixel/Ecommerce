@@ -1,0 +1,38 @@
+{% extends 'bace.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2 class="form-title">Add New Product</h2>
+
+    <form method="POST" enctype="multipart/form-data" class="styled-form">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <input type="text" name="title" placeholder="Product Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" name="price" placeholder="Price" required>
+        </div>
+
+        <div class="form-group">
+            <select name="category" required>
+                <option value="Frames">Frames</option>
+                <option value="Sunglasses">Sunglasses</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Upload Image</label>
+            <input type="file" name="image">
+        </div>
+
+        <div class="form-group">
+            <label>OR Image URL</label>
+            <input type="text" name="image_url" placeholder="Enter image URL">
+        </div>
+
+        <button type="submit" class="btn-submit">Add Product</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,194 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VisionPoint Opticals</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<nav class="vp-navbar">
+    <div class="nav-container">
+
+        <!-- Logo -->
+        <a href="{% url 'index' %}" class="logo">
+            <i class="fas fa-eye"></i> Vision<span>Point</span>
+        </a>
+
+        <!-- Search -->
+        <div class="nav-search">
+            <form action="{% url 'search' %}" method="GET">
+                <input type="text" name="query" placeholder="Search...">
+
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Links -->
+        <div class="nav-links">
+            <a href="{% url 'index' %}">Home</a>
+<div class="dropdown">
+
+    <a href="#">Sunglasses</a>
+
+    <div class="dropdown-content">
+
+        <a href="{% url 'category_products' 'Men Frame' %}">
+            Men Sunglasses
+        </a>
+
+        <a href="{% url 'category_products' 'Women Frame' %}">
+            Women Sunglasses
+        </a>
+
+        <a href="{% url 'category_products' 'Premium Frame' %}">
+            Premium Sunglasses
+        </a>
+
+    </div>
+
+</div>
+            <div class="dropdown">
+    <a href="#">Frames</a>
+
+    <div class="dropdown-content">
+        <a href="#">Full Frame</a>
+        <a href="#">Half Frame</a>
+        <a href="#">Round Frame</a>
+    </div>
+</div>
+
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'add_product' %}" class="nav-link">
+                    Add Product
+                </a>
+            {% endif %}
+        </div>
+
+        <!-- Icons -->
+        <div class="nav-icons">
+
+            <!-- Cart -->
+            <a href="{% url 'cart_page' %}">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+
+            {% if user.is_authenticated %}
+
+                <!-- Profile Icon -->
+                <div class="profile-trigger" onclick="toggleProfile()">
+                    <div class="user-avatar-nav">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+
+                <!-- Logout -->
+                <a href="{% url 'logout' %}" title="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+
+            {% else %}
+
+                <!-- Login -->
+                <a href="{% url 'login' %}" title="Login">
+                    <i class="fas fa-user"></i>
+                </a>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+</nav>
+
+
+{% if user.is_authenticated %}
+
+<div id="sideProfile" class="side-profile-box">
+
+    <div class="side-profile-content">
+
+        <span class="close-btn" onclick="toggleProfile()">
+            &times;
+        </span>
+
+        <div class="side-profile-header">
+
+            <div class="avatar-circle">
+                <i class="fas fa-user"></i>
+            </div>
+
+            <h3>{{ user.username }}</h3>
+            <p>{{ user.email }}</p>
+
+        </div>
+
+        <div class="side-profile-links">
+
+            <a href="{% url 'my_orders' %}">
+                <i class="fas fa-shopping-bag"></i>
+                My Orders
+            </a>
+
+            <a href="#">
+                <i class="fas fa-heart"></i>
+                Wishlist
+            </a>
+
+            <a href="#">
+                <i class="fas fa-cog"></i>
+                Settings
+            </a>
+
+            <hr>
+
+            <a href="{% url 'logout' %}" class="logout-side">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endif %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="vp-footer">
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>VisionPoint Opticals</h3>
+                <p>Your vision is our priority. Best quality frames and lenses for your eyes.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-phone"></i> +91 7593857942</p>
+                <p><i class="fas fa-envelope"></i> info@visionpoint.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VisionPoint Opticals | Built with Django</p>
+        </div>
+    </footer>
+<script>
+function toggleProfile() {
+    document.getElementById("sideProfile").classList.toggle("active");
+}
+</script>
+
+</html>
